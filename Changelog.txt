@@ -1,0 +1,27 @@
+v1.0
+
+ * [General]:
+- The Game Has Been Rewritten From Scratch. (Now it's based on SCP - Containment Breach: Ultimate Edition v1.2.1)
+~ Custom-Made Systems By Wolfnaya:
+
+1.) Weapon System
+2.) Inventory System
+3.) Separate Zone Loading (SZL) System
+4.) Player Model System
+5.) Chapter System
+6.) Gamemode System
+7.) Item Weight System
+
+~ Improved Systems:
+
+1.) Alarm Rotors System
+2.) Flu Lights System
+3.) Water System
+4.) Main Menu System
+5.) Moving Elevator System
+6.) Tasks System
+7.) Hit Boxes System
+
+~ Code Taken And Rewritten From Other Sources:
+
+1.) Projector System (Written by ENDSHN and Vane Vrain, Rewritten by Wolfnaya)
