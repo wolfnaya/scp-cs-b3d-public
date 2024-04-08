@@ -144,6 +144,16 @@ Function FillRoom%(r.Rooms)
 ;			
 ;			elev = CreateElevator(r\Objects[2], 3, r\RoomDoors[3], 0, r, -5000, -2500, 0)
 			
+			r\RoomFluLights[0] = CreateFluLight(r, "Flu_Light", 0, 255, 255, 255, r\x, r\y + 360.0 * RoomScale, r\z)
+			r\RoomFluLights[1] = CreateFluLight(r, "Flu_Light2", 1, 0, 200, 255, r\x + 200.0 * RoomScale, r\y + 320.0 * RoomScale, r\z)
+			r\RoomFluLights[2] = CreateFluLight(r, "Flu_Light2", 0, 200, 100, 25, r\x + 400.0 * RoomScale, r\y + 320.0 * RoomScale, r\z)
+			
+			InitFluLight(r, 0, FLU_STATE_FLICKER)
+			InitFluLight(r, 1, FLU_STATE_ON)
+			
+			r\RoomProjectors[0] = CreateProjector(r, "GFX\Map\Rooms\projector_wall.b3d", r\x - 300.0 * RoomScale, r\y, r\z + 1000.0 * RoomScale, 0.0, 0.0, 0.0, "GFX\Map\Textures\projector_graph.png", -0.5, 0.8, 0.0, 45.0, 0.0, 0.0)
+			r\RoomProjectors[1] = CreateProjector(r, "GFX\Map\Rooms\projector_wall.b3d", r\x + 400.0 * RoomScale, r\y, r\z + 1000.0 * RoomScale, 0.0, 0.0, 0.0, "GFX\Map\Textures\projector_graph_2.png", 0.0, 0.5, 0.0, 0.0, 0.0, 0.0)
+			
 			; ~ Misc doors
 			d.Doors = CreateDoor(r, r\x - 640.0 * RoomScale, r\y + 384.0 * RoomScale, r\z + 95.0 * RoomScale, -90.0)
 			d\Locked = 1 : d\DisableWaypoint = True : d\MTFClose = False

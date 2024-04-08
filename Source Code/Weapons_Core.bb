@@ -88,13 +88,13 @@ Global wep_I.WeaponInstance
 Type Weapons
 	Field ID%, WeaponType%, Name$
 	Field Model%, WModel%, HandsModel%, IronSightCoords.Vector3D
-	Field State#, ReloadState#, FrameSeparation%
+	Field State#, ReloadState#, FrameSeparation% ; ~ Frame Separation is a sustem that allows you to use one hand mesh for all weapons. (it's finished but I ported only P90's animations). - Wolfnaya
 	Field CurrentAmmo%, MaximumCurrentAmmo%, Caliber%, BulletAmount%, FireMode%
 	Field Damage#, Accuracy#, Range#, FireRate#, AttackState#, AttackTimer#
 	Field Knockback#, VerticalRecoil#
 	Field HasAttachment%[MaxWeaponAttachments], CanHaveAttachment%[MaxWeaponAttachments]
 	Field MuzzleFlash%, AimCross%, CanAim%, Found%, PlayingAnimation%
-	Field Temperature#, MaximumTemperature#, CoolTimer#;, CurrentAnimation.Vector3D
+	Field Temperature#, MaximumTemperature#, CoolTimer#;, CurrentAnimation.Vector3D ; ~ This one is causing massive memory leak, so I commented it out. - Wolfnaya
 	Field AttackSounds%, ReloadSounds%
 End Type
 ;[End Block]
@@ -845,8 +845,15 @@ Function UpdateWeapons()
 				
 				; ~ Setting Weapon Model Animations
 				;[Block]
-				SetAnimTime(wep\Model, (AnimTime(wep\HandsModel) + wep\FrameSeparation))
+				SetAnimTime(wep\Model, (AnimTime(wep\HandsModel) + wep\FrameSeparation)) ; ~ Basically frame separation is a value of frames of all animations, that comes before this exact gun you're adding. - Wolfnaya
 				;[End Block]
+				
+; ~ (Frame Separation TIP)				; ~ (Step 1)				; ~ When you add your animations into the gun, you also have to add exact animations into the hand mesh.				; ~ (Step 2)
+				; ~ Count the amount of frames in hand mesh that come before those animations you're adding. (In P90's case frame separation is 0, because it's animations are first.)				; ~ (Step 3)				; ~ Write that value into the CreateGun() function under the section: "FrameSeparation%".
+				; ~ (Step 4)				; ~ Test!
+				
+				;I Hope this explaniation helped. Love, Wolfnaya
+; ~ (End of Tip)
 				
 				; ~ Jamming Logic
 				;[Block]
