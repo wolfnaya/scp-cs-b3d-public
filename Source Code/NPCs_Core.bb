@@ -4612,8 +4612,8 @@ Function ApplyHitBoxes.HitBox(NpcType%, NpcName$)
 			PositionEntity hb\HitBox1[i], PosX, PosY, PosZ
 			RotateEntity hb\HitBox1[i], Pitch, Yaw, Roll
 			EntityPickMode hb\HitBox1[i],2
-			EntityAlpha hb\HitBox1[i],0.5;0
-;			HideEntity hb\HitBox1[i]
+			EntityAlpha hb\HitBox1[i],0.0
+			HideEntity hb\HitBox1[i]
 			;[End Block]
 		ElseIf HType = 1
 			;[Block]
@@ -4631,8 +4631,8 @@ Function ApplyHitBoxes.HitBox(NpcType%, NpcName$)
 			PositionEntity hb\HitBox2[i], PosX, PosY, PosZ
 			RotateEntity hb\HitBox2[i], Pitch, Yaw, Roll
 			EntityPickMode hb\HitBox2[i],2
-			EntityAlpha hb\HitBox2[i],0.5;0
-;			HideEntity hb\HitBox2[i]
+			EntityAlpha hb\HitBox2[i],0.0
+			HideEntity hb\HitBox2[i]
 			;[End Block]
 		Else
 			;[Block]
@@ -4650,8 +4650,8 @@ Function ApplyHitBoxes.HitBox(NpcType%, NpcName$)
 			PositionEntity hb\HitBox3[i], PosX, PosY, PosZ
 			RotateEntity hb\HitBox3[i], Pitch, Yaw, Roll
 			EntityPickMode hb\HitBox3[i],2
-			EntityAlpha hb\HitBox3[i],0.5;0
-;			HideEntity hb\HitBox3[i]
+			EntityAlpha hb\HitBox3[i], 0.0
+			HideEntity hb\HitBox3[i]
 			;[End Block]
 		EndIf
 		

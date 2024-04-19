@@ -689,13 +689,17 @@ Function CreateProjector.Projectors(room.Rooms, Obj$ = "GFX\Map\Rooms\projector_
 	Return(proj)
 End Function
 
-Function UpdateProjector(proj.Projectors, ShouldMove% = False, Scale# = 0.8, MovementSpeed# = 0.0)
+Function UpdateProjector(proj.Projectors, Scale# = 0.8, MovementSpeed# = 0.0)
 	Local Surf%, s%, v%
 	Local Random#
 	
 	; ~ Determining If The Texture Will Rotate Or Not
 	;[Block]
-	proj\ShouldMove = ShouldMove
+	If MovementSpeed > 0.0 Then
+		proj\ShouldMove = True
+	Else
+		proj\ShouldMove = False
+	EndIf
 	;[End Block]
 	
 	; ~ Rotation Logic
@@ -743,8 +747,8 @@ End Function
 Function RemoveProjector%(proj.Projectors)
 	If proj\Obj <> 0 Then FreeEntity(proj\Obj) : proj\Obj = 0
 	If proj\ObjCopy <> 0 Then FreeEntity(proj\ObjCopy) : proj\ObjCopy = 0
-;	If proj\Texture <> 0 Then FreeEntity(proj\Texture) : proj\Texture = 0 ; ~ Causes some errors for some reason. - Wolfnaya
-	If proj\TextureBl <> 0 Then FreeEntity(proj\TextureBl) : proj\TextureBl = 0
+	If proj\Texture <> 0 Then FreeTexture(proj\Texture) : proj\Texture = 0
+	If proj\TextureBl <> 0 Then FreeTexture(proj\TextureBl) : proj\TextureBl = 0
 	Delete(proj)
 End Function
 

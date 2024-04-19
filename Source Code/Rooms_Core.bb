@@ -136,11 +136,11 @@ Function FillRoom%(r.Rooms)
 			r\RoomAlarmRotors[1] = CreateAlarmRotor(r, "Alarm_Rotor", 4.0, True, r\x + 4700 * RoomScale, r\y + 1120 * RoomScale, r\z + 1730 * RoomScale, 0, 0, 0, 255, 0, 0, 0.005, 0.03, 0.005, Alarm_Cone_Y)
 			
 ;			r\Objects[2] = CopyEntity(elev_m_I\ElevatorModel[0], r\OBJ)
-;			PositionEntity(r\Objects[2], 0, 0, 0)
+;			PositionEntity(r\Objects[2], 400, 0, 0)
 ;			EntityType r\Objects[2], HIT_MAP
 ;			EntityPickMode r\Objects[2], 2
 ;			
-;			r\RoomDoors.Doors[3] = CreateDoor(r, r\x, r\y, r\z, 90.0, True, ELEVATOR_DOOR)
+;			r\RoomDoors.Doors[3] = CreateDoor(r, r\x + 100.0 * RoomScale, r\y, r\z, 90.0, True, ELEVATOR_DOOR)
 ;			
 ;			elev = CreateElevator(r\Objects[2], 3, r\RoomDoors[3], 0, r, -5000, -2500, 0)
 			

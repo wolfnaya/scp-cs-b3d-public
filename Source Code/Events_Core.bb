@@ -592,8 +592,8 @@ Function UpdateEvents%()
 				UpdateAlarmRotor(e\room\RoomAlarmRotors[0])
 				UpdateAlarmRotor(e\room\RoomAlarmRotors[1])
 				
-				UpdateProjector(e\room\RoomProjectors[0], False, 1.2)
-				UpdateProjector(e\room\RoomProjectors[1], True, 2.0, 2.0)
+				UpdateProjector(e\room\RoomProjectors[0], 1.2)
+				UpdateProjector(e\room\RoomProjectors[1], 2.0, 2.0)
 				
 				If e\room\RoomDoors[3] = Null
 					For i = 0 To MaxRoomAdjacents - 1
