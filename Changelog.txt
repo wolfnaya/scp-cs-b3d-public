@@ -24,4 +24,4 @@ v1.0
 
 ~ Code Taken And Rewritten From Other Sources:
 
-1.) Projector System (Written by ENDSHN and Vane Vrain, Rewritten by Wolfnaya)
+1.) Projector System (Written by ENDSHN and Vane Brain, Rewritten by Wolfnaya)
